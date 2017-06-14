@@ -1,8 +1,6 @@
 <template>
     <section class="container">
         <h1>About page</h1>
-        <p>Check the source code to see the custom meta tags added with our custom component <code>head-card</code></p>
-        <head-card></head-card>
         <p>
             This Diary is made by Seonghwa Lee.
             He loves the world and he wants to change the world more lovely.
