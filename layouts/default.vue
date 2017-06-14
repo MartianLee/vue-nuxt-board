@@ -1,9 +1,19 @@
 <template>
   <div>
+    <vuenavbar/>
     <nuxt/>
   </div>
 </template>
 
+<script>
+  import vuenavbar from '~components/nav-bar.vue'
+
+  export default {
+    components: {
+      vuenavbar
+    }
+  }
+</script>
 <style>
 html
 {
