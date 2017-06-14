@@ -6,7 +6,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
-    "nuxt": "latest"
+    "bootstrap": "^3.3.7",
+    "materialize-css": "^0.98.2",
+    "nuxt": "^0.10.7",
+    "vue-strap": "^1.1.37"
   },
   "scripts": {
     "dev": "HOST=0.0.0.0 nuxt",

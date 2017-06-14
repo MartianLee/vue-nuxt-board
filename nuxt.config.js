@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -10,13 +12,17 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'}
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
+    plugins: ['~plugins/bootstrap.js']
   },
+  css:[
+    'bootstrap/dist/css/bootstrap.css'
+  ],
   /*
   ** Customize the progress-bar color
   */
@@ -28,7 +34,7 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    vendor: ['axios'],
+    vendor: ['axios','jquery','bootstrap'],
     extend (config, ctx) {
       if (ctx.isClient) {
         config.module.rules.push({
@@ -38,6 +44,14 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    plugins: [
+      // set shortcuts as global for bootstrap
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    ]
   }
 }
